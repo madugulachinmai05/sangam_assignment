@@ -1,0 +1,51 @@
+name = input("Enter student name: ")
+maths = int(input("Enter Maths marks: "))
+physics = int(input("Enter Physics marks: "))
+chemistry = int(input("Enter Chemistry marks: "))
+
+total = maths + physics + chemistry
+average = total / 3
+
+print("Student Name:", name)
+print("Total Marks:", total)
+print("Average:", average)
+
+if average >= 90:
+    grade = "A"
+elif average >= 75:
+    grade = "B"
+elif average >= 50:
+    grade = "C"
+else:
+    grade = "Fail"
+
+print("Grade:", grade)
+
+STREAMLIT:
+import streamlit as st
+
+st.title("Student Grade Calculator")
+
+name = st.text_input("Enter student name:")
+
+maths = st.number_input("Enter Maths marks:", min_value=0, max_value=100, step=1)
+physics = st.number_input("Enter Physics marks:", min_value=0, max_value=100, step=1)
+chemistry = st.number_input("Enter Chemistry marks:", min_value=0, max_value=100, step=1)
+
+if st.button("Calculate Result"):
+    total = maths + physics + chemistry
+    average = total / 3
+
+    if average >= 90:
+        grade = "A"
+    elif average >= 75:
+        grade = "B"
+    elif average >= 50:
+        grade = "C"
+    else:
+        grade = "Fail"
+
+    st.write("Student Name:", name)
+    st.write("Total Marks:", total)
+    st.write("Average:", round(average, 2))
+    st.success(f"Grade: {grade}")
