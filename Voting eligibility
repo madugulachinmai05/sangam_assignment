@@ -1,0 +1,17 @@
+BASIC CODE:
+age = int(input("Enter your age: "))
+
+if age >= 18:
+    print("You are eligible to vote.")
+else:
+    print("You are not eligible to vote.")
+
+STREAMLIT:
+import streamlit as st
+st.title("Voting Eligibility Checker")
+age = st.number_input("Enter your age:", min_value=0, step=1)
+if st.button("Check Eligibility"):
+    if age >= 18:
+        st.success("You are eligible to vote.")
+    else:
+        st.error("You are not eligible to vote.")
