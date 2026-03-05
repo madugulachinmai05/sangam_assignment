@@ -1,0 +1,32 @@
+n = int(input("Enter number of elements: "))
+numbers = []
+
+for i in range(n):
+    value = int(input("Enter element: "))
+    numbers.append(value)
+
+total = 0
+for num in numbers:
+    total += num
+
+print("Sum of elements:", total)
+
+STREAMLIT:
+import streamlit as st
+
+st.title("Sum of List Elements")
+
+n = st.number_input("Enter number of elements:", min_value=1, step=1)
+
+numbers = []
+
+for i in range(int(n)):
+    value = st.number_input(f"Enter element {i+1}:", key=i)
+    numbers.append(value)
+
+if st.button("Calculate Sum"):
+    total = 0
+    for num in numbers:
+        total += num
+
+    st.success(f"Sum of elements: {total}")
