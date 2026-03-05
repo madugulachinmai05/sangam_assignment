@@ -1,1 +1,18 @@
+BASIC CODE:
+num = int(input("Enter a number: "))
 
+if num % 2 == 0:
+    print(num, "is an Even number")
+else:
+    print(num, "is an Odd number")
+
+
+USING STREAMLIT:
+import streamlit as st
+st.title("Even or Odd Checker")
+num = st.number_input("Enter a number:", step=1)
+if st.button("Check"):
+    if num % 2 == 0:
+        st.success(f"{num} is Even")
+    else:
+        st.info(f"{num} is Odd")
