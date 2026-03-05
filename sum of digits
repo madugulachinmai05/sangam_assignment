@@ -1,0 +1,27 @@
+num = int(input("Enter a number: "))
+sum_digits = 0
+
+while num > 0:
+    digit = num % 10
+    sum_digits += digit
+    num //= 10
+
+print("Sum of digits:", sum_digits)
+
+STREAMLIT:
+import streamlit as st
+
+st.title("Sum of Digits Calculator")
+
+num = st.number_input("Enter a number:", min_value=0, step=1)
+
+if st.button("Calculate Sum"):
+    temp = num
+    sum_digits = 0
+
+    while temp > 0:
+        digit = temp % 10
+        sum_digits += digit
+        temp //= 10
+
+    st.success(f"Sum of digits: {sum_digits}")
