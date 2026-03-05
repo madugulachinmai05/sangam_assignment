@@ -1,0 +1,11 @@
+for(i in range 1,11):
+  print(i)
+
+STREAMLIT:
+import streamlit as st
+
+st.title("First 10 Natural Numbers")
+
+if st.button("Show Numbers"):
+    for i in range(1, 11):
+        st.write(i)
